@@ -9,8 +9,8 @@ div.appendChild(formTag);
 
 const RegDiv = document.createElement('div');
 RegDiv.setAttribute('class', 'find');
-RegDiv.title = 'регистрация';
-RegDiv.textContent = 'введите данные';
+RegDiv.title = 'Регистрация';
+RegDiv.textContent = 'Введите данные';
 formTag.appendChild(RegDiv);
 
 const lebel = document.createElement('label');
@@ -49,6 +49,8 @@ input_2.max = '100';
 formTag.appendChild(input_2);
 
 const btnDiv = document.createElement('div');
+btnDiv.setAttribute('onclick', 'sendName()');
+btnDiv.setAttribute('id', 'send');
 btnDiv.setAttribute('class', 'btn');
 btnDiv.textContent = 'Отправить';
 formTag.appendChild(btnDiv);
@@ -61,13 +63,12 @@ div.appendChild(formTag_1);
 const findDiv = document.createElement('div');
 findDiv.setAttribute('class', 'find');
 findDiv.textContent = 'Список Имен';
-findDiv.title = 'вы можете найти тут свою имя';
+findDiv.title = 'Вы можете найти тут своё имя';
 formTag_1.appendChild(findDiv);
 
 const textarea = document.createElement('textarea');
 textarea.setAttribute('id', 'message');
 textarea.name = 'message';
-textarea.placeholder = 'Имя Фамилия Возрaст';
 formTag_1.appendChild(textarea);
 
 //second page -------------------------------------------------
@@ -81,8 +82,8 @@ div_1.appendChild(formTag_2);
 
 const RegDiv_1 = document.createElement('div');
 RegDiv_1.setAttribute('class', 'find');
-RegDiv_1.title = 'найдите свое имя';
-RegDiv_1.textContent = 'поиск человека !';
+RegDiv_1.title = 'Найдите своё имя';
+RegDiv_1.textContent = 'Поиск человека !';
 formTag_2.appendChild(RegDiv_1);
 
 const lebel_3 = document.createElement('label');
@@ -109,7 +110,7 @@ formTag_2.appendChild(input_4);
 
 const lebel_5 = document.createElement('label');
 lebel_5.setAttribute('for', 'aage');
-lebel_5.innerHTML = 'Возрост <span>*</span>';
+lebel_5.innerHTML = 'Возраст <span>*</span>';
 formTag_2.appendChild(lebel_5);
 
 const input_5 = document.createElement('input');
@@ -141,3 +142,16 @@ textarea_1.setAttribute('id', 'message');
 textarea_1.name = 'message';
 textarea_1.placeholder = 'Имя Фамилия Возрaст';
 formTag_3.appendChild(textarea_1);
+
+
+
+function sendName() {
+    let sName = document.getElementById('name').value;  
+    let sSurname = document.getElementById('surname').value;
+    let sAge = document.getElementById('age').value;
+
+    let concatt = sName + ' ' + sSurname + ' ' + sAge + '&#13;&#10' ;
+    let oldValue = document.getElementById('message').innerHTML;
+    let newValue = concatt + oldValue;
+    document.getElementById('message').innerHTML = newValue;
+}
