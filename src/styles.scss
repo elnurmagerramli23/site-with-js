@@ -73,7 +73,7 @@ body {
     }
 
     #container-first__form-input input,
-    #container-first__form-input textarea {
+    #container-first__form-input #message {
         margin-bottom: 10px;
         width: 100%;
         padding: 10px 2%;
@@ -92,7 +92,7 @@ body {
         }
     }
 
-    #container-first__form-input textarea {
+    #container-first__form-input #message {
         height: 16.5em;
     }
 

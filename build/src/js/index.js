@@ -190,14 +190,14 @@ function sendName() {
         };
     people.push(p);
     
-        for (i = 0; i < people.length; i++) {
-            let oldlist = document.getElementById('list');
-            for (i = 0; i < people.length; i++) {
-                var newlist = document.getElementById('list').innerHTML;
-                var newlist = newlist + "<li>" + people[i].name + " " + people[i].surname  + " " +  people[i].age + "</li>";
-            };
-        oldlist.innerHTML =  newlist;
-        };
+    for (i = 0; i < people.length; i++) {
+        let oldlist = document.getElementById('list');
+    for (i = 0; i < people.length; i++) {
+        var newlist = document.getElementById('list').innerHTML;
+        var newlist = newlist + "<li>" + people[i].name + " " + people[i].surname  + " " +  people[i].age + "</li>";
+    };
+    oldlist.innerHTML =  newlist;
+    };
   };
 };
 
@@ -218,19 +218,19 @@ function searchName() {
                 age: people[i].age,
             } 
         resmassiv.push(newarray);
-        }
+        } else {return 'ged qarnivu qashi'};
     };
 
-    document.getElementById('list2').innerHTML = "";
-    var resultObject = resmassiv;
-    searchList = resultObject.length;
-    for (y = 0; y < searchList; y++) {
-
-        oldlistsearch = document.getElementById('list2');
+        document.getElementById('list2').innerHTML = "";
+        var resultObject = resmassiv;
+        searchList = resultObject.length;
         for (y = 0; y < searchList; y++) {
-            var newlistsearchh = document.getElementById('list2').innerHTML;
-            var newlistsearch = newlistsearchh + "<li>" + resultObject[y].name + " " + resultObject[y].surname + " " + resultObject[y].age + "</li>";
-        oldlistsearch.innerHTML = newlistsearch;
+    
+            oldlistsearch = document.getElementById('list2');
+            for (y = 0; y < searchList; y++) {
+                var newlistsearchh = document.getElementById('list2').innerHTML;
+                var newlistsearch = newlistsearchh + "<li>" + resultObject[y].name + " " + resultObject[y].surname + " " + resultObject[y].age + "</li>";
+            oldlistsearch.innerHTML = newlistsearch;
         };
-    };
+     };
 };
